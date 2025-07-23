@@ -4,7 +4,7 @@
 
 TEST(BaseballGame, ThrowExceptionInputLengthIsUnmatched) {
 	Baseball game;
-	EXPECT_EQ(1, 1);
+	EXPECT_THROW(game.guess(std::string("12")), std::length_error);
 }
 
 int main() {
