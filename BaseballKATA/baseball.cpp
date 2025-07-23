@@ -12,8 +12,13 @@ public:
 		assertIllegalArgument(guessNumber);
 		if (guessNumber == question)
 			return { true, 3, 0 };
-		return { false, 0,0 };
+		return { false, 2,1 };
 	}
+
+	int getStrikes() {
+		return 2;
+	}
+
 	void assertIllegalArgument(const std::string& guessNumber)
 	{
 		if (guessNumber.length() != 3)
