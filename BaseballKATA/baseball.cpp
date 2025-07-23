@@ -14,10 +14,10 @@ public:
 			return { true, 3, 0 };
 		result = {};
 		for (auto ch : guessNumber) {
-			if (question.find(ch) == std::string::npos)
-				result.balls++;
-			else
+			if (question.find(ch) == guessNumber.find(ch))
 				result.strikes++;
+			else if (question.find(ch) != std::string::npos)
+				result.balls++;
 		}
 		return result;
 	}
