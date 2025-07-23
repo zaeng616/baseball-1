@@ -13,16 +13,11 @@ public:
 		if (guessNumber == question)
 			return { true, 3, 0 };
 		result = {};
-		int i, j;
-		for (i = 0; i < 3; i++) {
-			for (j = 0; j < 3; j++) {
-				if (guessNumber[i] == question[j]) {
-					result.strikes++;
-					break;
-				}
-			}
-			if (j == 3)
+		for (auto ch : guessNumber) {
+			if (question.find(ch) == std::string::npos)
 				result.balls++;
+			else
+				result.strikes++;
 		}
 		return result;
 	}
